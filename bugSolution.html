@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <div id="myDiv"></div>
+
+  <script>
+    function getDynamicContent() {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve('<p>This is dynamically added content.</p>');
+            }, 1000);
+        });
+    }
+
+    getDynamicContent().then(content => {
+      document.getElementById("myDiv").innerHTML = content; 
+    });
+  </script>
+</body>
+</html>
