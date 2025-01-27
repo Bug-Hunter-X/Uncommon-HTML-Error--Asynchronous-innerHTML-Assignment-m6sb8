@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <div id="myDiv"></div>
+
+  <script>
+    // Incorrect usage of innerHTML with a function call directly
+    document.getElementById("myDiv").innerHTML = getDynamicContent(); //Error
+
+    function getDynamicContent() {
+        // Simulate an asynchronous operation (e.g., fetching data)
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve('<p>This is dynamically added content.</p>');
+            }, 1000);
+        });
+    }
+  </script>
+</body>
+</html>
